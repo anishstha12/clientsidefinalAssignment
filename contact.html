@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Calm and Kettle Cafe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo.png" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <img src="images/logo.png" alt="Calm and Kettle Cafe Logo" class="logo" />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="order.html" class="order-btn">Order/Book</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact-section container">
+    <h1>Get In Touch</h1>
+    <p>We'd love to hear from you! Whether you want to ask a question, give feedback, or just say hello drop us a message below.</p>
+
+    <div class="contact-wrapper">
+      <form class="contact-form" id="contactForm">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p id="form-status"></p>
+      </form>
+
+      <div class="map-container">
+        <h2>Visit Us</h2>
+        <p> HA9 7ET (51D London Road, Wembley)</p>
+        <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19849.073270139007!2d-0.3054381!3d51.5581609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487610e68ec1b0cf%3A0x89c57974a4f72cf6!2sWembley%2C%20UK!5e0!3m2!1sen!2suk!4v1721329200000"
+  width="100%"
+  height="250"
+  class="map-iframe"
+  title="Map showing location of Calm and Kettle Cafe in Wembley"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+        <p>Open Hours: <strong>7:00 AM – 8:00 PM</strong></p>
+        <p>Phone: <a href="tel:07887 280383">07887 280383</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Calm and Kettle Cafe. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("form-status").innerText = "Thank you! We'll get back to you shortly.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>

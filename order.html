@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order or Book - Calm and Kettle Cafe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo.png" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <img src="images/logo.png" alt="Calm and Kettle Cafe Logo" class="logo" />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="order.html" aria-current="page" class="order-btn">Order/Book</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="order-section container">
+    <h1>Order Online or Book a Table</h1>
+    <p>Enjoy our handcrafted delights from the comfort of your home, or reserve your cozy corner at Calm and Kettle Cafe.</p>
+
+    <form id="orderForm" class="order-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="type">Service Type</label>
+      <select id="type" name="type" required>
+        <option value="">Select an option</option>
+        <option value="table">Table Booking</option>
+        <option value="takeaway">Takeaway Order</option>
+      </select>
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Time</label>
+      <input type="time" id="time" name="time" required />
+
+      <label for="items">Your Order / Notes</label>
+      <textarea id="items" name="items" rows="4" placeholder="e.g. 2 Cappuccinos, 1 Croissant or table for 3 near window..." required></textarea>
+
+      <button type="submit" class="btn">Submit Request</button>
+      <p id="order-status"></p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Calm and Kettle Cafe. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("order-status").innerText = "Thank you! Your request has been received.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>

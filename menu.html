@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calm and Kettle Cafe - Menu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo.png" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <img src="images/logo.png" alt="Calm and Kettle Cafe Logo" class="logo" />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" aria-current="page">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="order.html" class="order-btn">Order/Book</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="menu-section container">
+    <h1 class="menu-title">Our Menu</h1>
+
+    <div class="menu-filters">
+      <button class="filter-btn" data-category="all">All</button>
+      <button class="filter-btn" data-category="coffee">Coffee</button>
+      <button class="filter-btn" data-category="tea">Tea</button>
+      <button class="filter-btn" data-category="pastries">Pastries</button>
+    </div>
+
+    <div class="menu-grid">
+      <!-- Coffee Items -->
+      <div class="menu-item coffee">
+        <img src="images/Espresso.jpg" alt+"Espresso" class="menu-img"/>
+        <h3>Espresso</h3>
+        <p>Strong & bold single shot</p>
+        <span>$3.00</span>
+      </div>
+      <div class="menu-item coffee">
+        <img src="images/cappucino.jpg" alt +"Cappuccino" class="menu-img"/>
+        <h3>Cappuccino</h3>
+        <p>Espresso with steamed milk & foam</p>
+        <span>$4.50</span>
+      </div>
+
+      <!-- Tea Items -->
+      <div class="menu-item tea">
+        <img src="images/masala tea.jpg" alt +"masala tea" class="menu-img"/>
+        <h3>Masala Chai</h3>
+        <p>Spiced Indian tea with milk</p>
+        <span>$3.50</span>
+      </div>
+      <div class="menu-item tea">
+        <h3>Green Tea</h3>
+        <p>Organic and refreshing</p>
+        <span>$2.80</span>
+      </div>
+
+      <!-- Pastries -->
+      <div class="menu-item pastries">
+        <h3>Chocolate Croissant</h3>
+        <p>Buttery pastry with chocolate filling</p>
+        <span>$3.75</span>
+      </div>
+      <div class="menu-item pastries">
+        <h3>Blueberry Muffin</h3>
+        <p>Freshly baked with real berries</p>
+        <span>$3.20</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Calm and Kettle Cafe. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll(".filter-btn");
+    const items = document.querySelectorAll(".menu-item");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const category = btn.dataset.category;
+        items.forEach(item => {
+          if (category === "all" || item.classList.contains(category)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
